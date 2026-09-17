@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LuxeThierno — Beauté, Soin, Élégance</title>
+<meta name="description" content="LuxeThierno : produits de beauté et de soin authentiques. Livraison rapide partout au Mali. Commandez directement sur WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23100B09'/><text x='16' y='23' font-size='16' font-family='Georgia' fill='%23C8A253' text-anchor='middle'>LT</text></svg>">
+
+<style>
+/* ============================================================
+   LUXETHIERNO — Feuille de style
+   ============================================================ */
+:root{
+  --noir:#100B09;
+  --noir-2:#1B1310;
+  --noir-3:#241A16;
+  --or:#C8A253;
+  --or-clair:#E8CE96;
+  --or-fonce:#9C7A34;
+  --rose:#E1477E;
+  --rose-fonce:#C32F66;
+  --rose-pale:#FCE8F0;
+  --rose-pale-2:#F9D7E4;
+  --creme:#FBF8F5;
+  --blanc:#FFFFFF;
+  --texte:#2C2320;
+  --texte-doux:#7A6A64;
+  --ligne:#EDE3DE;
+  --ombre:0 18px 40px -22px rgba(46,26,20,.45);
+  --rayon:14px;
+  --max:1240px;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:104px;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.65;
+  color:var(--texte);
+  background:var(--creme);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,select{font-family:inherit;font-size:15px;}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px;}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;letter-spacing:.2px;}
+p{margin:0;}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:22px;}
+
+/* ---------- Boutons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:999px;
+  font-size:14.5px;font-weight:500;letter-spacing:.3px;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+}
+.btn:active{transform:translateY(1px);}
+.btn-or{background:linear-gradient(135deg,var(--or-clair),var(--or));color:#221708;box-shadow:0 12px 26px -14px rgba(200,162,83,.9);}
+.btn-or:hover{box-shadow:0 16px 30px -12px rgba(200,162,83,1);}
+.btn-rose{background:var(--rose);color:#fff;box-shadow:0 12px 26px -14px rgba(225,71,126,.95);}
+.btn-rose:hover{background:var(--rose-fonce);}
+.btn-noir{background:var(--noir);color:var(--creme);}
+.btn-noir:hover{background:var(--noir-3);}
+.btn-large{width:100%;padding:15px 22px;font-size:15px;}
+
+.icone{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ---------- Logo ---------- */
+.logo{display:flex;align-items:center;gap:12px;}
+.logo svg{width:46px;height:46px;flex:none;}
+.logo-nom{font-family:var(--serif);font-size:27px;font-weight:600;letter-spacing:.4px;line-height:1;color:var(--or-clair);}
+.logo-sous{font-family:var(--sans);font-size:9.5px;letter-spacing:2.6px;color:#B9A78E;margin-top:5px;text-transform:uppercase;}
+.logo--clair .logo-nom{color:var(--noir);}
+.logo--clair .logo-sous{color:var(--texte-doux);}
+
+/* ---------- En-tête ---------- */
+.entete{
+  position:sticky;top:0;z-index:60;
+  background:rgba(16,11,9,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(200,162,83,.22);
+}
+.entete-in{display:flex;align-items:center;gap:26px;min-height:82px;}
+.nav{display:flex;gap:26px;margin-left:auto;}
+.nav a{font-size:14.5px;color:#EAE0D6;padding:6px 0;position:relative;}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--or);transition:right .25s ease;}
+.nav a:hover::after,.nav a.actif::after{right:0;}
+.outils{display:flex;align-items:center;gap:16px;}
+.outils button{color:#EAE0D6;display:grid;place-items:center;padding:6px;border-radius:50%;transition:color .2s;}
+.outils button:hover{color:var(--or-clair);}
+.panier-btn{position:relative;}
+.pastille{
+  position:absolute;top:-2px;right:-4px;min-width:18px;height:18px;padding:0 4px;
+  background:var(--rose);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:600;display:grid;place-items:center;line-height:1;
+}
+.tel-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(200,162,83,.5);border-radius:999px;
+  padding:7px 15px;font-size:13.5px;font-weight:500;color:var(--or-clair);
+  transition:background .2s;
+}
+.tel-badge:hover{background:rgba(200,162,83,.14);}
+.tel-badge svg{width:15px;height:15px;}
+.burger{display:none;color:#EAE0D6;}
+
+/* ---------- Héros ---------- */
+.heros{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1000px 520px at 78% 12%,rgba(200,162,83,.20),transparent 62%),
+    radial-gradient(760px 500px at 12% 88%,rgba(225,71,126,.16),transparent 60%),
+    linear-gradient(160deg,#0C0806 0%,#1D1410 55%,#2A1B14 100%);
+  color:#F4ECE2;
+}
+.heros-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:78px 0 84px;}
+.eyebrow{font-size:11.5px;letter-spacing:5px;color:var(--or);margin-bottom:22px;text-transform:uppercase;}
+.heros h1{
+  font-size:clamp(50px,7.4vw,92px);font-weight:600;
+  background:linear-gradient(100deg,#FFF3D8 8%,var(--or) 48%,#F5E3BA 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:18px;
+}
+.heros-phrase{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,25px);line-height:1.5;color:#E7D9C6;max-width:26ch;}
+.atouts{display:flex;flex-wrap:wrap;gap:26px;margin:34px 0 32px;}
+.atout{display:flex;align-items:center;gap:11px;max-width:200px;}
+.atout .rond{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(200,162,83,.45);color:var(--or-clair);}
+.atout span{font-size:13.5px;line-height:1.35;color:#DCCDBB;}
+.heros-visuel{position:relative;min-height:400px;border-radius:26px;overflow:hidden;border:1px solid rgba(200,162,83,.3);}
+.heros-visuel img{width:100%;height:100%;object-fit:cover;min-height:400px;}
+.heros-visuel .repli{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 40% 35%,rgba(225,71,126,.28),transparent 60%),linear-gradient(150deg,#2A1B14,#4A2E22);
+  display:grid;place-items:center;text-align:center;padding:30px;
+}
+.heros-visuel .repli p{font-family:var(--serif);font-size:23px;color:var(--or-clair);line-height:1.4;}
+
+/* ---------- Sections ---------- */
+.section{padding:80px 0;}
+.section--rose{background:linear-gradient(180deg,#FFF 0%,var(--rose-pale) 100%);}
+.section--blanc{background:var(--blanc);}
+.titre-bloc{margin-bottom:38px;max-width:60ch;}
+.titre-bloc h2{font-size:clamp(32px,4vw,44px);}
+.titre-bloc p{color:var(--texte-doux);margin-top:10px;font-size:15.5px;}
+
+/* ---------- Catégories ---------- */
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+.cat{
+  position:relative;border-radius:var(--rayon);overflow:hidden;
+  background:var(--blanc);border:1px solid var(--ligne);box-shadow:var(--ombre);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.cat:hover{transform:translateY(-5px);box-shadow:0 26px 46px -24px rgba(46,26,20,.5);}
+.cat-img{height:124px;background:linear-gradient(140deg,var(--rose-pale-2),#F3E3D2);display:grid;place-items:center;}
+.cat-img svg{width:44px;height:44px;stroke:var(--or-fonce);fill:none;stroke-width:1.3;}
+.cat-bas{padding:16px 16px 20px;text-align:center;}
+.cat-bas h3{font-size:19px;margin-bottom:12px;}
+.cat-fleche{width:30px;height:30px;margin-inline:auto;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;}
+.cat-fleche svg{width:15px;height:15px;stroke:#fff;}
+
+/* ---------- Boutique ---------- */
+.boutique-entete{
+  background:linear-gradient(115deg,#E1477E 0%,#F07BA5 48%,#F9C9D9 100%);
+  color:#fff;padding:54px 0;
+}
+.boutique-entete .eyebrow{color:#FFE6F0;}
+.boutique-entete h2{font-size:clamp(32px,4.6vw,50px);margin-bottom:12px;}
+.boutique-entete p{max-width:44ch;color:#FFEAF2;font-size:16px;}
+
+.boutique-grille{display:grid;grid-template-columns:238px 1fr;gap:34px;align-items:start;}
+.filtres{position:sticky;top:104px;display:grid;gap:18px;}
+.carte-filtre{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:12px;box-shadow:var(--ombre);}
+.filtre{
+  width:100%;display:flex;align-items:center;gap:11px;
+  padding:11px 13px;border-radius:10px;font-size:14.5px;color:var(--texte);
+  transition:background .18s,color .18s;text-align:left;
+}
+.filtre svg{width:17px;height:17px;stroke:var(--or-fonce);fill:none;stroke-width:1.5;}
+.filtre:hover{background:var(--rose-pale);}
+.filtre.actif{background:var(--rose-pale);color:var(--rose-fonce);font-weight:500;}
+.filtre.actif svg{stroke:var(--rose);}
+
+.carte-contact{background:var(--rose-pale);border:1px solid var(--rose-pale-2);border-radius:var(--rayon);padding:22px 18px;text-align:center;}
+.carte-contact .mini{font-size:13px;color:var(--rose-fonce);font-weight:500;line-height:1.4;}
+.carte-contact .num{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--rose-fonce);margin:12px 0 6px;display:block;}
+.carte-contact .note{font-size:12.5px;color:var(--texte-doux);}
+
+.barre-tri{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px;flex-wrap:wrap;}
+.barre-tri h3{font-size:27px;}
+.tri{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--texte-doux);}
+.tri select{border:1px solid var(--ligne);background:var(--blanc);border-radius:9px;padding:8px 12px;color:var(--texte);}
+
+.produits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.produit{
+  background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);
+  overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 12px 28px -22px rgba(46,26,20,.6);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.produit:hover{transform:translateY(-5px);border-color:var(--rose-pale-2);box-shadow:0 26px 44px -26px rgba(46,26,20,.6);}
+.produit-img{
+  aspect-ratio:1/1;background:#FDFAF8;padding:16px;display:grid;place-items:center;cursor:zoom-in;position:relative;
+}
+.produit-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;}
+.repli-img{
+  width:100%;height:100%;border-radius:10px;display:grid;place-items:center;text-align:center;padding:12px;
+  background:linear-gradient(140deg,#FCEAF1,#F6E6D5);color:var(--or-fonce);
+  font-family:var(--serif);font-size:15px;line-height:1.3;
+}
+.produit-corps{padding:14px 16px 18px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.produit-cat{font-size:11px;letter-spacing:1.4px;color:var(--or-fonce);text-transform:uppercase;}
+.produit h4{font-size:19px;font-weight:600;}
+.produit-desc{font-size:13.5px;color:var(--texte-doux);line-height:1.55;flex:1;}
+.produit .btn{margin-top:10px;}
+
+/* ---------- Bannière ---------- */
+.banniere{
+  background:linear-gradient(105deg,var(--rose-pale) 0%,#FBDCE8 50%,#F7C9DC 100%);
+  border-radius:20px;padding:46px 44px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;
+  border:1px solid var(--rose-pale-2);
+}
+.banniere h3{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.6vw,40px);color:var(--rose-fonce);margin-bottom:10px;}
+.banniere p{color:#7B4257;font-size:16px;max-width:34ch;margin-bottom:22px;}
+.banniere-visuel{border-radius:16px;overflow:hidden;min-height:170px;background:linear-gradient(150deg,#fff,#F6DCE7);display:grid;place-items:center;}
+.banniere-visuel img{width:100%;height:100%;object-fit:cover;min-height:170px;}
+
+/* ---------- Avis ---------- */
+.avis{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.avis-carte{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:26px 24px;box-shadow:var(--ombre);}
+.etoiles{color:var(--or);letter-spacing:3px;font-size:15px;margin-bottom:12px;}
+.avis-carte p{font-family:var(--serif);font-size:18.5px;line-height:1.55;color:var(--texte);}
+.avis-nom{margin-top:16px;font-size:13.5px;color:var(--texte-doux);}
+
+/* ---------- À propos ---------- */
+.apropos{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.apropos-txt h2{font-size:clamp(30px,3.8vw,42px);margin-bottom:16px;}
+.apropos-txt p{color:var(--texte-doux);margin-bottom:14px;max-width:50ch;}
+.apropos-visuel{border-radius:20px;overflow:hidden;min-height:330px;background:linear-gradient(150deg,#2A1B14,#4A2E22);display:grid;place-items:center;border:1px solid rgba(200,162,83,.3);}
+.apropos-visuel img{width:100%;height:100%;object-fit:cover;min-height:330px;}
+.apropos-visuel .repli{font-family:var(--serif);color:var(--or-clair);font-size:22px;padding:24px;text-align:center;}
+
+/* ---------- Contact ---------- */
+.contact-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.contact-carte{
+  display:flex;align-items:center;gap:15px;background:var(--blanc);
+  border:1px solid var(--ligne);border-radius:var(--rayon);padding:20px;box-shadow:var(--ombre);
+  transition:transform .2s,border-color .2s;
+}
+.contact-carte:hover{transform:translateY(-3px);border-color:var(--rose-pale-2);}
+.contact-carte .rond{width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--rose-pale);color:var(--rose-fonce);}
+.contact-carte .rond svg{width:21px;height:21px;}
+.contact-carte strong{display:block;font-size:15.5px;font-weight:500;}
+.contact-carte span{font-size:13px;color:var(--texte-doux);}
+
+/* ---------- Pied de page ---------- */
+.pied{background:var(--noir);color:#CBBBAB;padding:52px 0 26px;border-top:1px solid rgba(200,162,83,.22);}
+.pied-haut{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;padding-bottom:30px;border-bottom:1px solid rgba(200,162,83,.18);}
+.pied-haut p{max-width:44ch;font-size:14.5px;margin-top:14px;color:#A89787;}
+.pied-tel{font-family:var(--serif);font-size:30px;color:var(--or-clair);}
+.pied-tel small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:2px;color:#8F8070;margin-bottom:4px;text-transform:uppercase;}
+.pied-bas{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:12.5px;color:#8D7E6F;}
+
+/* ---------- Panier ---------- */
+.voile{position:fixed;inset:0;background:rgba(16,11,9,.55);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.25s;z-index:80;}
+.voile.ouvert{opacity:1;visibility:visible;}
+.panier{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);background:var(--creme);
+  z-index:90;transform:translateX(102%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;box-shadow:-24px 0 60px -30px rgba(0,0,0,.7);
+}
+.panier.ouvert{transform:none;}
+.panier-tete{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--ligne);}
+.panier-tete h3{font-size:24px;}
+.panier-tete small{color:var(--texte-doux);font-family:var(--sans);font-size:13px;margin-left:6px;}
+.panier-liste{flex:1;overflow-y:auto;padding:18px 24px;display:grid;gap:14px;align-content:start;}
+.panier-vide{text-align:center;color:var(--texte-doux);padding:60px 10px;font-size:14.5px;}
+.panier-ligne{display:grid;grid-template-columns:64px 1fr auto;gap:13px;align-items:center;background:var(--blanc);border:1px solid var(--ligne);border-radius:12px;padding:11px;}
+.panier-ligne .vignette{width:64px;height:64px;border-radius:9px;background:#FDF6F2;display:grid;place-items:center;overflow:hidden;}
+.panier-ligne .vignette img{width:100%;height:100%;object-fit:contain;}
+.panier-ligne h5{font-family:var(--serif);font-size:17px;font-weight:600;margin:0;}
+.panier-ligne p{font-size:12px;color:var(--texte-doux);line-height:1.4;}
+.qte{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.qte button{width:24px;height:24px;border-radius:50%;border:1px solid var(--ligne);display:grid;place-items:center;font-size:15px;line-height:1;background:var(--blanc);}
+.qte button:hover{border-color:var(--rose);color:var(--rose);}
+.qte span{font-size:14px;min-width:16px;text-align:center;}
+.retirer{color:var(--texte-doux);font-size:12px;text-decoration:underline;}
+.retirer:hover{color:var(--rose-fonce);}
+.panier-pied{padding:20px 24px 24px;border-top:1px solid var(--ligne);background:var(--blanc);}
+.panier-pied .note{font-size:12.5px;color:var(--texte-doux);margin-bottom:14px;line-height:1.5;}
+
+/* ---------- Fiche produit ---------- */
+.fiche{
+  position:fixed;inset:0;z-index:95;display:none;place-items:center;padding:24px;overflow-y:auto;
+}
+.fiche.ouvert{display:grid;}
+.fiche-boite{
+  background:var(--blanc);border-radius:20px;max-width:900px;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.7);
+}
+.fiche-img{background:#FDF7F3;padding:34px;display:grid;place-items:center;min-height:340px;}
+.fiche-img img{max-height:340px;object-fit:contain;}
+.fiche-txt{padding:38px 34px;display:flex;flex-direction:column;gap:12px;}
+.fiche-txt h3{font-size:31px;}
+.fiche-txt .sous{color:var(--texte-doux);font-size:15px;}
+.fiche-puce{display:inline-block;align-self:flex-start;background:#FBEFD9;color:var(--or-fonce);font-size:12px;padding:5px 13px;border-radius:999px;}
+.fiche-points{display:grid;gap:9px;margin:6px 0 4px;}
+.fiche-points li{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--texte);}
+.fiche-points svg{width:17px;height:17px;stroke:var(--rose);flex:none;}
+.fermer{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;border:1px solid var(--ligne);z-index:2;}
+.fermer:hover{background:var(--rose-pale);}
+
+/* ---------- Notification ---------- */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,130%);
+  background:var(--noir);color:var(--creme);padding:13px 24px;border-radius:999px;
+  font-size:14px;z-index:120;transition:transform .3s cubic-bezier(.4,0,.2,1);
+  border:1px solid rgba(200,162,83,.4);box-shadow:0 20px 40px -20px rgba(0,0,0,.8);
+}
+.toast.visible{transform:translate(-50%,0);}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .categories{grid-template-columns:repeat(3,1fr);}
+  .produits{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:900px){
+  .nav{display:none;}
+  .burger{display:grid;place-items:center;margin-left:auto;}
+  .nav.ouvert{
+    display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;
+    background:var(--noir-2);padding:18px 24px;gap:6px;border-bottom:1px solid rgba(200,162,83,.25);
+  }
+  .nav.ouvert a{padding:11px 0;font-size:16px;}
+  .tel-badge{display:none;}
+  .heros-in{grid-template-columns:1fr;padding:56px 0 64px;}
+  .heros-visuel{min-height:280px;order:-1;}
+  .heros-visuel img{min-height:280px;}
+  .boutique-grille{grid-template-columns:1fr;}
+  .filtres{position:static;}
+  .carte-filtre{display:flex;gap:8px;overflow-x:auto;padding:10px;}
+  .filtre{white-space:nowrap;}
+  .carte-contact{display:none;}
+  .apropos,.banniere{grid-template-columns:1fr;}
+  .avis,.contact-grille{grid-template-columns:1fr;}
+  .fiche-boite{grid-template-columns:1fr;}
+  .pied-haut{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .section{padding:56px 0;}
+  .categories{grid-template-columns:repeat(2,1fr);}
+  .produits{grid-template-columns:repeat(2,1fr);}
+  .produit h4{font-size:17px;}
+  .banniere{padding:30px 22px;}
+  .logo-nom{font-size:22px;}
+  .logo svg{width:38px;height:38px;}
+  .entete-in{min-height:70px;gap:12px;}
+  .outils{gap:10px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================= EN-TÊTE ======================= -->
+<header class="entete">
+  <div class="wrap entete-in">
+    <a href="#accueil" class="logo" aria-label="LuxeThierno, accueil">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="gOr" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F0DDAE"/><stop offset="50%" stop-color="#C8A253"/><stop offset="100%" stop-color="#8E6C2C"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#140E0B" stroke="url(#gOr)" stroke-width="2"/>
+        <circle cx="32" cy="32" r="25" fill="none" stroke="url(#gOr)" stroke-width=".7" opacity=".55"/>
+        <path d="M22 21l5 5 5-7 5 7 5-5-1.6 8H23.6z" fill="url(#gOr)"/>
+        <text x="32" y="48" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="23" font-weight="600" fill="url(#gOr)" letter-spacing="1">LT</text>
+      </svg>
+      <span>
+        <span class="logo-nom">LuxeThierno</span>
+        <span class="logo-sous">Beauté · Soin · Élégance</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#accueil" class="actif">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#apropos">À propos</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg class="icone" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <div class="outils">
+      <button class="panier-btn" id="ouvrirPanier" aria-label="Ouvrir le panier">
+        <svg class="icone" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+        <span class="pastille" id="compteurPanier">0</span>
+      </button>
+      <a href="https://wa.me/22392927277" target="_blank" rel="noopener" class="tel-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 14.9L2 22l5.3-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z"/></svg>
+        92 92 72 77
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HÉROS ======================= -->
+<section class="heros" id="accueil">
+  <div class="wrap heros-in">
+    <div>
+      <p class="eyebrow">Votre beauté, notre priorité</p>
+      <h1>LuxeThierno</h1>
+      <p class="heros-phrase">Des soins de qualité pour une peau plus belle, plus saine, chaque jour.</p>
+
+      <div class="atouts">
+        <div class="atout">
+          <span class="rond"><svg class="icone" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></span>
+          <span>Produits authentiques et de qualité</span>
+        </div>
+        <div class="atout">
+          <span class="rond"><svg class="icone" viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
+          <span>Livraison rapide partout au Mali</span>
+        </div>
+        <div class="atout">
+          <span class="rond"><svg class="icone" viewBox="0 0 24 24"><path d="M21 12a9 9 0 10-3.5 7.1L21 21z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>
+          <span>Service client réactif sur WhatsApp</span>
+        </div>
+      </div>
+
+      <a href="#boutique" class="btn btn-or">Découvrir la boutique</a>
+    </div>
+
+    <div class="heros-visuel">
+      <img src="images/hero.png" alt="Sélection de produits LuxeThierno" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+      <div class="repli" style="display:none"><p>Ajoutez images/hero.png<br>pour votre visuel d'accueil</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CATÉGORIES ======================= -->
+<section class="section section--blanc">
+  <div class="wrap">
+    <div class="titre-bloc">
+      <h2>Nos catégories</h2>
+      <p>Découvrez nos différentes gammes de produits pour prendre soin de vous.</p>
+    </div>
+    <div class="categories" id="categories"></div>
+  </div>
+</section>
+
+<!-- ======================= BOUTIQUE ======================= -->
+<section class="boutique-entete" id="boutique">
+  <div class="wrap">
+    <p class="eyebrow">Nos produits</p>
+    <h2>La beauté dans chaque soin</h2>
+    <p>Des produits sélectionnés pour votre bien-être et votre éclat naturel.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:44px">
+  <div class="wrap boutique-grille">
+    <aside class="filtres">
+      <div class="carte-filtre" id="listeFiltres"></div>
+      <div class="carte-contact">
+        <p class="mini">Livraison rapide<br>partout au Mali</p>
+        <a href="https://wa.me/22392927277" target="_blank" rel="noopener" class="num">92 92 72 77</a>
+        <p class="note">Une question ? Écrivez-nous sur WhatsApp.</p>
+      </div>
+    </aside>
+
+    <div>
+      <div class="barre-tri">
+        <h3 id="titreGrille">Tous les produits</h3>
+        <label class="tri">Trier par
+          <select id="tri">
+            <option value="defaut">Nouveautés</option>
+            <option value="az">Nom (A → Z)</option>
+            <option value="za">Nom (Z → A)</option>
+          </select>
+        </label>
+      </div>
+      <div class="produits" id="grilleProduits"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BANNIÈRE ======================= -->
+<section style="padding-bottom:70px">
+  <div class="wrap">
+    <div class="banniere">
+      <div>
+        <h3>Prenez soin de vous</h3>
+        <p>La beauté n'est pas un luxe, c'est une nécessité. Commandez en un message, on s'occupe du reste.</p>
+        <a href="https://wa.me/22392927277?text=Bonjour%20LuxeThierno%2C%20je%20souhaite%20passer%20une%20commande." target="_blank" rel="noopener" class="btn btn-noir">Commander maintenant</a>
+      </div>
+      <div class="banniere-visuel">
+        <img src="images/banniere.png" alt="Soins LuxeThierno" onerror="this.remove()">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AVIS ======================= -->
+<section class="section section--rose" id="avis">
+  <div class="wrap">
+    <div class="titre-bloc">
+      <h2>Ce que disent nos clientes</h2>
+      <p>Des retours qui nous poussent à faire mieux chaque jour.</p>
+    </div>
+    <div class="avis">
+      <div class="avis-carte">
+        <div class="etoiles">★★★★★</div>
+        <p>Livraison le jour même à Bamako, et le produit était exactement comme sur la photo.</p>
+        <p class="avis-nom">Aminata K. — Bamako</p>
+      </div>
+      <div class="avis-carte">
+        <div class="etoiles">★★★★★</div>
+        <p>J'ai commandé sur WhatsApp en deux minutes. Le suivi a été parfait du début à la fin.</p>
+        <p class="avis-nom">Fatoumata D. — Kati</p>
+      </div>
+      <div class="avis-carte">
+        <div class="etoiles">★★★★★</div>
+        <p>Des produits authentiques, ma peau a vraiment changé en quelques semaines.</p>
+        <p class="avis-nom">Mariam T. — Ségou</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= À PROPOS ======================= -->
+<section class="section section--blanc" id="apropos">
+  <div class="wrap apropos">
+    <div class="apropos-txt">
+      <h2>Une maison de beauté née à Bamako</h2>
+      <p>LuxeThierno sélectionne des soins du corps, du visage et des cheveux authentiques, adaptés à toutes les peaux et à tous les budgets.</p>
+      <p>Chaque produit est vérifié avant d'entrer dans notre catalogue. Vous commandez sur WhatsApp, nous préparons, nous livrons — partout au Mali.</p>
+      <p>Une question sur un produit ou une routine ? Écrivez-nous, nous répondons sous 24h.</p>
+      <a href="#boutique" class="btn btn-rose" style="margin-top:12px">Voir les produits</a>
+    </div>
+    <div class="apropos-visuel">
+      <img src="images/apropos.png" alt="LuxeThierno" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+      <div class="repli" style="display:none">Ajoutez images/apropos.png</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="titre-bloc">
+      <h2>Nous contacter</h2>
+      <p>Une question ? Une commande ? Nous sommes là.</p>
+    </div>
+    <div class="contact-grille">
+      <a class="contact-carte" href="https://wa.me/22392927277" target="_blank" rel="noopener">
+        <span class="rond"><svg class="icone" viewBox="0 0 24 24"><path d="M21 12a9 9 0 10-3.5 7.1L21 21z"/></svg></span>
+        <span><strong>92 92 72 77</strong><span>WhatsApp et appel</span></span>
+      </a>
+      <a class="contact-carte" href="mailto:luxethierno@gmail.com">
+        <span class="rond"><svg class="icone" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <span><strong>luxethierno@gmail.com</strong><span>Réponse sous 24h</span></span>
+      </a>
+      <div class="contact-carte">
+        <span class="rond"><svg class="icone" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span><strong>Bamako, Mali</strong><span>Livraison partout au Mali</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PIED DE PAGE ======================= -->
+<footer class="pied">
+  <div class="wrap">
+    <div class="pied-haut">
+      <div>
+        <a href="#accueil" class="logo" aria-label="LuxeThierno">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#140E0B" stroke="url(#gOr)" stroke-width="2"/>
+            <path d="M22 21l5 5 5-7 5 7 5-5-1.6 8H23.6z" fill="url(#gOr)"/>
+            <text x="32" y="48" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="23" font-weight="600" fill="url(#gOr)" letter-spacing="1">LT</text>
+          </svg>
+          <span>
+            <span class="logo-nom">LuxeThierno</span>
+            <span class="logo-sous">Beauté · Soin · Élégance</span>
+          </span>
+        </a>
+        <p>Des produits de qualité pour sublimer votre beauté et prendre soin de vous chaque jour.</p>
+      </div>
+      <a href="https://wa.me/22392927277" target="_blank" rel="noopener" class="pied-tel">
+        <small>Commandes</small>92 92 72 77
+      </a>
+    </div>
+    <div class="pied-bas">
+      <span>© 2026 LuxeThierno. Tous droits réservés.</span>
+      <span>Bamako, Mali</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= PANIER ======================= -->
+<div class="voile" id="voile"></div>
+<aside class="panier" id="panier" aria-label="Panier">
+  <div class="panier-tete">
+    <h3>Mon panier <small id="nbArticles">(0 article)</small></h3>
+    <button id="fermerPanier" aria-label="Fermer le panier">
+      <svg class="icone" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="panier-liste" id="panierListe"></div>
+  <div class="panier-pied">
+    <p class="note">Le total et la livraison vous sont confirmés sur WhatsApp après votre commande.</p>
+    <button class="btn btn-rose btn-large" id="commanderTout">Passer la commande sur WhatsApp</button>
+  </div>
+</aside>
+
+<!-- ======================= FICHE PRODUIT ======================= -->
+<div class="fiche" id="fiche" role="dialog" aria-modal="true">
+  <div class="fiche-boite">
+    <button class="fermer" id="fermerFiche" aria-label="Fermer">
+      <svg class="icone" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="fiche-img"><img id="ficheImg" src="" alt=""></div>
+    <div class="fiche-txt">
+      <span class="fiche-puce" id="fichePuce"></span>
+      <h3 id="ficheNom"></h3>
+      <p class="sous" id="ficheDesc"></p>
+      <ul class="fiche-points" style="list-style:none;padding:0;margin:8px 0">
+        <li><svg class="icone" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Produit authentique</li>
+        <li><svg class="icone" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Livraison rapide partout au Mali</li>
+        <li><svg class="icone" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Conseils gratuits sur WhatsApp</li>
+      </ul>
+      <button class="btn btn-rose btn-large" id="ficheCommander">Commander sur WhatsApp</button>
+      <button class="btn btn-noir btn-large" id="ficheAjouter" style="margin-top:8px">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   1) RÉGLAGES — modifie uniquement cette partie
+   ============================================================ */
+const WHATSAPP = "22392927277";          // 223 = Mali + ton numéro
+const DOSSIER_IMAGES = "images";         // nom de ton dossier d'images
+
+/* Les catégories de la boutique */
+const CATEGORIES = [
+  { id:"corps",   nom:"Soins du corps" },
+  { id:"visage",  nom:"Soins du visage" },
+  { id:"cheveux", nom:"Cheveux" },
+  { id:"hygiene", nom:"Hygiène" },
+  { id:"parfums", nom:"Parfums" }
+];
+
+/* Les 20 produits.
+   -> Change "nom", "desc" et "cat" comme tu veux.
+   -> "img" correspond à images/image1.png, image2.png, etc. */
+const PRODUITS = [
+  { id:1,  nom:"Produit 1",  cat:"corps",   img:"image1.png",  desc:"Description du produit 1. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:2,  nom:"Produit 2",  cat:"visage",  img:"image2.png",  desc:"Description du produit 2. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:3,  nom:"Produit 3",  cat:"cheveux", img:"image3.png",  desc:"Description du produit 3. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:4,  nom:"Produit 4",  cat:"hygiene", img:"image4.png",  desc:"Description du produit 4. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:5,  nom:"Produit 5",  cat:"parfums", img:"image5.png",  desc:"Description du produit 5. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:6,  nom:"Produit 6",  cat:"corps",   img:"image6.png",  desc:"Description du produit 6. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:7,  nom:"Produit 7",  cat:"visage",  img:"image7.png",  desc:"Description du produit 7. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:8,  nom:"Produit 8",  cat:"cheveux", img:"image8.png",  desc:"Description du produit 8. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:9,  nom:"Produit 9",  cat:"hygiene", img:"image9.png",  desc:"Description du produit 9. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:10, nom:"Produit 10", cat:"parfums", img:"image10.png", desc:"Description du produit 10. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:11, nom:"Produit 11", cat:"corps",   img:"image11.png", desc:"Description du produit 11. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:12, nom:"Produit 12", cat:"visage",  img:"image12.png", desc:"Description du produit 12. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:13, nom:"Produit 13", cat:"cheveux", img:"image13.png", desc:"Description du produit 13. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:14, nom:"Produit 14", cat:"hygiene", img:"image14.png", desc:"Description du produit 14. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:15, nom:"Produit 15", cat:"parfums", img:"image15.png", desc:"Description du produit 15. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:16, nom:"Produit 16", cat:"corps",   img:"image16.png", desc:"Description du produit 16. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:17, nom:"Produit 17", cat:"visage",  img:"image17.png", desc:"Description du produit 17. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:18, nom:"Produit 18", cat:"cheveux", img:"image18.png", desc:"Description du produit 18. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:19, nom:"Produit 19", cat:"hygiene", img:"image19.png", desc:"Description du produit 19. Ce texte est provisoire, remplace-le par la vraie description." },
+  { id:20, nom:"Produit 20", cat:"parfums", img:"image20.png", desc:"Description du produit 20. Ce texte est provisoire, remplace-le par la vraie description." }
+];
+
+/* ============================================================
+   2) LE CODE DU SITE — pas besoin d'y toucher
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const nomCat = id => (CATEGORIES.find(c => c.id === id) || {}).nom || "";
+const chemin = p => DOSSIER_IMAGES + "/" + p;
+
+const ICONES_CAT = {
+  corps:'<svg viewBox="0 0 24 24"><path d="M8 3h8l-1 4H9z"/><rect x="6" y="7" width="12" height="14" rx="3"/><path d="M9 13h6"/></svg>',
+  visage:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 14.5c1.8 1.6 5.2 1.6 7 0"/></svg>',
+  cheveux:'<svg viewBox="0 0 24 24"><path d="M12 3c4 0 7 3.4 7 7.6V21H5v-10C5 6.4 8 3 12 3z"/><path d="M9 21V12M15 21V12"/></svg>',
+  hygiene:'<svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="10" rx="4"/><path d="M8 9V7a4 4 0 018 0v2"/></svg>',
+  parfums:'<svg viewBox="0 0 24 24"><rect x="7" y="9" width="10" height="12" rx="3"/><path d="M10 9V6h4v3M12 3v3"/></svg>'
+};
+
+let filtreActif = "tous";
+let panier = [];
+let produitOuvert = null;
+
+/* ---- Message WhatsApp ---- */
+function lienWhatsApp(texte){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texte);
+}
+function commanderProduit(p){
+  const msg =
+`Bonjour LuxeThierno 👋
+
+Je souhaite commander ce produit :
+
+• ${p.nom}
+• Catégorie : ${nomCat(p.cat)}
+
+Pouvez-vous me confirmer le prix et la livraison ? Merci.`;
+  window.open(lienWhatsApp(msg), "_blank");
+}
+function commanderPanier(){
+  if(!panier.length){ notifier("Votre panier est vide."); return; }
+  const lignes = panier.map(a => `• ${a.nom} — quantité : ${a.qte}`).join("\n");
+  const msg =
+`Bonjour LuxeThierno 👋
+
+Je souhaite commander :
+
+${lignes}
+
+Pouvez-vous me confirmer le total et la livraison ? Merci.`;
+  window.open(lienWhatsApp(msg), "_blank");
+}
+
+/* ---- Catégories ---- */
+function rendreCategories(){
+  $("#categories").innerHTML = CATEGORIES.map(c => `
+    <a class="cat" href="#boutique" data-cat="${c.id}">
+      <div class="cat-img">${ICONES_CAT[c.id] || ""}</div>
+      <div class="cat-bas">
+        <h3>${c.nom}</h3>
+        <span class="cat-fleche"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>`).join("");
+
+  document.querySelectorAll(".cat").forEach(el => {
+    el.addEventListener("click", () => appliquerFiltre(el.dataset.cat));
+  });
+}
+
+/* ---- Filtres ---- */
+function rendreFiltres(){
+  const items = [{id:"tous",nom:"Tous les produits"}].concat(CATEGORIES);
+  $("#listeFiltres").innerHTML = items.map(c => `
+    <button class="filtre ${c.id===filtreActif?"actif":""}" data-cat="${c.id}">
+      ${c.id==="tous"
+        ? '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>'
+        : (ICONES_CAT[c.id]||"")}
+      ${c.nom}
+    </button>`).join("");
+
+  document.querySelectorAll(".filtre").forEach(b => {
+    b.addEventListener("click", () => appliquerFiltre(b.dataset.cat));
+  });
+}
+function appliquerFiltre(cat){
+  filtreActif = cat;
+  rendreFiltres();
+  rendreProduits();
+  $("#titreGrille").textContent = cat === "tous" ? "Tous les produits" : nomCat(cat);
+}
+
+/* ---- Produits ---- */
+function listeFiltree(){
+  let liste = filtreActif === "tous" ? [...PRODUITS] : PRODUITS.filter(p => p.cat === filtreActif);
+  const tri = $("#tri").value;
+  if(tri === "az") liste.sort((a,b)=>a.nom.localeCompare(b.nom,"fr",{numeric:true}));
+  if(tri === "za") liste.sort((a,b)=>b.nom.localeCompare(a.nom,"fr",{numeric:true}));
+  return liste;
+}
+function rendreProduits(){
+  const liste = listeFiltree();
+  if(!liste.length){
+    $("#grilleProduits").innerHTML = `<p style="color:var(--texte-doux)">Aucun produit dans cette catégorie pour le moment.</p>`;
+    return;
+  }
+  $("#grilleProduits").innerHTML = liste.map(p => `
+    <article class="produit">
+      <div class="produit-img" data-fiche="${p.id}">
+        <img src="${chemin(p.img)}" alt="${p.nom}"
+             onerror="this.outerHTML='<div class=&quot;repli-img&quot;>${p.img}</div>'">
+      </div>
+      <div class="produit-corps">
+        <span class="produit-cat">${nomCat(p.cat)}</span>
+        <h4>${p.nom}</h4>
+        <p class="produit-desc">${p.desc}</p>
+        <button class="btn btn-rose" data-commander="${p.id}">
+          <svg class="icone" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+          Commander
+        </button>
+      </div>
+    </article>`).join("");
+
+  document.querySelectorAll("[data-commander]").forEach(b => {
+    b.addEventListener("click", () => {
+      const p = PRODUITS.find(x => x.id == b.dataset.commander);
+      ajouterAuPanier(p, false);
+      commanderProduit(p);
+    });
+  });
+  document.querySelectorAll("[data-fiche]").forEach(el => {
+    el.addEventListener("click", () => ouvrirFiche(PRODUITS.find(x => x.id == el.dataset.fiche)));
+  });
+}
+
+/* ---- Panier ---- */
+function ajouterAuPanier(p, avecMessage = true){
+  const existe = panier.find(a => a.id === p.id);
+  if(existe) existe.qte++;
+  else panier.push({ id:p.id, nom:p.nom, img:p.img, cat:p.cat, qte:1 });
+  majPanier();
+  if(avecMessage) notifier(p.nom + " ajouté au panier");
+}
+function changerQte(id, delta){
+  const a = panier.find(x => x.id === id);
+  if(!a) return;
+  a.qte += delta;
+  if(a.qte < 1) panier = panier.filter(x => x.id !== id);
+  majPanier();
+}
+function majPanier(){
+  const total = panier.reduce((s,a)=>s+a.qte,0);
+  $("#compteurPanier").textContent = total;
+  $("#nbArticles").textContent = `(${total} article${total>1?"s":""})`;
+
+  $("#panierListe").innerHTML = panier.length ? panier.map(a => `
+    <div class="panier-ligne">
+      <div class="vignette"><img src="${chemin(a.img)}" alt="" onerror="this.remove()"></div>
+      <div>
+        <h5>${a.nom}</h5>
+        <p>${nomCat(a.cat)}</p>
+        <div class="qte">
+          <button data-moins="${a.id}" aria-label="Retirer un">−</button>
+          <span>${a.qte}</span>
+          <button data-plus="${a.id}" aria-label="Ajouter un">+</button>
+        </div>
+      </div>
+      <button class="retirer" data-supp="${a.id}">Retirer</button>
+    </div>`).join("")
+    : `<p class="panier-vide">Votre panier est vide.<br>Ajoutez un produit pour commencer.</p>`;
+
+  document.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>changerQte(+b.dataset.plus,1));
+  document.querySelectorAll("[data-moins]").forEach(b=>b.onclick=()=>changerQte(+b.dataset.moins,-1));
+  document.querySelectorAll("[data-supp]").forEach(b=>b.onclick=()=>{
+    panier = panier.filter(x => x.id != b.dataset.supp); majPanier();
+  });
+
+  try{ localStorage.setItem("lt_panier", JSON.stringify(panier)); }catch(e){}
+}
+function ouvrirPanier(o){
+  $("#panier").classList.toggle("ouvert", o);
+  $("#voile").classList.toggle("ouvert", o);
+}
+
+/* ---- Fiche produit ---- */
+function ouvrirFiche(p){
+  produitOuvert = p;
+  $("#ficheImg").src = chemin(p.img);
+  $("#ficheImg").alt = p.nom;
+  $("#ficheNom").textContent = p.nom;
+  $("#ficheDesc").textContent = p.desc;
+  $("#fichePuce").textContent = nomCat(p.cat);
+  $("#fiche").classList.add("ouvert");
+  $("#voile").classList.add("ouvert");
+}
+function fermerFiche(){
+  $("#fiche").classList.remove("ouvert");
+  $("#voile").classList.remove("ouvert");
+}
+
+/* ---- Notification ---- */
+let minuteur;
+function notifier(txt){
+  const t = $("#toast");
+  t.textContent = txt;
+  t.classList.add("visible");
+  clearTimeout(minuteur);
+  minuteur = setTimeout(()=>t.classList.remove("visible"), 2600);
+}
+
+/* ---- Branchements ---- */
+$("#ouvrirPanier").onclick = () => ouvrirPanier(true);
+$("#fermerPanier").onclick = () => ouvrirPanier(false);
+$("#voile").onclick = () => { ouvrirPanier(false); fermerFiche(); };
+$("#fermerFiche").onclick = fermerFiche;
+$("#commanderTout").onclick = commanderPanier;
+$("#ficheCommander").onclick = () => { ajouterAuPanier(produitOuvert,false); commanderProduit(produitOuvert); };
+$("#ficheAjouter").onclick = () => { ajouterAuPanier(produitOuvert); fermerFiche(); };
+$("#tri").onchange = rendreProduits;
+$("#burger").onclick = () => {
+  const n = $("#nav"), o = n.classList.toggle("ouvert");
+  $("#burger").setAttribute("aria-expanded", o);
+};
+document.querySelectorAll("#nav a").forEach(a => a.onclick = () => $("#nav").classList.remove("ouvert"));
+document.addEventListener("keydown", e => { if(e.key === "Escape"){ ouvrirPanier(false); fermerFiche(); } });
+
+/* Lien de navigation actif au défilement */
+const sections = ["accueil","boutique","avis","apropos","contact"];
+window.addEventListener("scroll", () => {
+  let courant = "accueil";
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && el.getBoundingClientRect().top <= 140) courant = id;
+  });
+  document.querySelectorAll("#nav a").forEach(a =>
+    a.classList.toggle("actif", a.getAttribute("href") === "#" + courant));
+}, { passive:true });
+
+/* Démarrage */
+try{ panier = JSON.parse(localStorage.getItem("lt_panier")) || []; }catch(e){ panier = []; }
+rendreCategories();
+rendreFiltres();
+rendreProduits();
+majPanier();
+</script>
+</body>
+</html>
